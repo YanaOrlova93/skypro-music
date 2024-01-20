@@ -4,9 +4,10 @@ import './PlayList.css'
 
 
 function PlayList () {
-    return (
+   const number = 10
+  return (
         <div className="content__playlist playlist">
-                <PlayListItem/>
+                <PlayListItem number={number}/>
 
                 
               </div>

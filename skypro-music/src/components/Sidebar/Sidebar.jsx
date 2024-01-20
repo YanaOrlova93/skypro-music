@@ -1,11 +1,11 @@
 import './Sidebar.css'
 
 
-function sidebar () {
+function sidebar ({user}) {
     return (
         <div className="main__sidebar sidebar">
             <div className="sidebar__personal">
-              <p className="sidebar__personal-name">Sergey.Ivanov</p>
+              <p className="sidebar__personal-name">{user}</p>
               <div className="sidebar__icon">
                 <svg alt="logout">
                   <use xlinkHref="img/icon/sprite.svg#logout"> </use>
@@ -18,7 +18,7 @@ function sidebar () {
                   <a className="sidebar__link" href="http://">
                     <img
                       className="sidebar__img"
-                      src="img/playlist01.png"
+                      src="./assets/playlist01.png"
                       alt="day's playlist"
                     />
                   </a>
@@ -27,7 +27,7 @@ function sidebar () {
                   <a className="sidebar__link" href="http://">
                     <img
                       className="sidebar__img"
-                      src="img/playlist02.png"
+                      src="./assets/playlist02.png"
                       alt="day's playlist"
                     />
                   </a>
@@ -36,7 +36,7 @@ function sidebar () {
                   <a className="sidebar__link" href="http://">
                     <img
                       className="sidebar__img"
-                      src="img/playlist03.png"
+                      src="./assets/playlist03.png"
                       alt="day's playlist"
                     />
                   </a>

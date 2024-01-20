@@ -8,13 +8,14 @@ import AudioPlayer from './components/AudioPlayer/AudioPlayer';
 
 
 function App() {
+  const user = 'Yana'
   return (
     <div className="wrapper">
       <div className="container">
         <main className="main">
           <NavMenu />
           <Centerblock />
-          <Sidebar />
+          <Sidebar user={user}/>
         </main>
         <AudioPlayer />
         <footer className="footer" />

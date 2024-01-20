@@ -2,8 +2,9 @@ import './PlayListItem.css'
 
 
 
-function PlayListItem () {
-    return ( 
+function PlayListItem ({number}) {
+    console.log(number);
+  return ( 
       <>
         <div className="playlist__item">
         <div className="playlist__track track">
