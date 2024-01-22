@@ -1,5 +1,5 @@
 import './Sidebar.css'
-
+// import { SkeletonTheme} from 'react-loading-skeleton';
 
 function sidebar ({user}) {
     return (
