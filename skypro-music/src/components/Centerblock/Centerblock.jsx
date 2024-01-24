@@ -35,19 +35,19 @@ function CenterBlock () {
         <div className="centerblock__filter filter">
           <div className="filter__title">Искать по:</div>
           <div className="wrapper-filter">
-            <div className="filter__button button-author _btn-text" onClick={() => toggleFilter("author")}>
+            <div className={`filter__button button-author _btn-text ${filterActive === 'author' ? 'active-filter-button' : ''}`} onClick={() => toggleFilter("author")}>
               исполнителю
             </div>
             {filterActive==='author' && <AuthorList/>}
           </div> 
           <div className="wrapper-filter">
-            <div className="filter__button button-year _btn-text" onClick={() => toggleFilter("year")}>
+            <div className={`filter__button button-year _btn-text ${filterActive === 'year' ? 'active-filter-button' : ''}`}onClick={() => toggleFilter("year")}>
               году выпуска
             </div>
             {filterActive==='year' && <YearList/>}
           </div>        
           <div className="wrapper-filter">
-            <div className="filter__button button-genre _btn-text" onClick={() => toggleFilter("genre")}>
+            <div className={`filter__button button-genre _btn-text ${filterActive === 'genre' ? 'active-filter-button' : ''}`}onClick={() => toggleFilter("genre")}>
               жанру
             </div>
             {filterActive==='genre' && <GenreList/>}             
