@@ -1,17 +1,37 @@
 import './PlayListItem.css'
+import React from 'react';
+import { useEffect, useState } from 'react';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 
+function PlayListItem () {
+   
+  const [isLoading, setIsLoading] = useState(true)
 
-function PlayListItem ({number}) {
-    console.log(number);
+  useEffect(() => {
+      setTimeout(() => {
+          setIsLoading(false)
+      }, 3000)
+  }, [])
+
   return ( 
       <>
         <div className="playlist__item">
         <div className="playlist__track track">
           <div className="track__title">
             <div className="track__title-image">
+
+            {isLoading ? (
+                      <Skeleton
+                      width={55}
+                      height={55}
+                      baseColor="#202020"
+                      highlightColor="#444"/>
+              ) : (     
+
               <svg className="track__title-svg" alt="music">
-                <use xlinkHref="img/icon/sprite.svg#icon-note" />
+                <use xlinkHref="assets/icon/sprite.svg#icon-note" />
               </svg>
             </div>
             <div className="track__title-text">
