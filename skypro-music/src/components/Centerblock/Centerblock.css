@@ -160,6 +160,13 @@
     border: 1px solid #ffffff;
     border-radius: 60px;
     padding: 6px 20px;
+    
+  }
+
+  .button-active {
+    background-color: #f0f0f0; /* или любой другой цвет, который вы хотите использовать */
+    color: #000; /* изменение цвета текста, если нужно */
+    /* другие стили для активной кнопки */
   }
 
   /* .filter__button:not(:last-child) {

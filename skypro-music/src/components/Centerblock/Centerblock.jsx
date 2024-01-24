@@ -7,7 +7,7 @@ import GenreList from '../Search/GenreList';
 
 
 
-function centerBlock () {
+function CenterBlock () {
   const [filterActive, setFilterActive] = useState(null)
   const toggleFilter = (nameFilter) => {
     if (filterActive===nameFilter) {
@@ -71,4 +71,4 @@ function centerBlock () {
     )
 }
 
-export default centerBlock;
+export default CenterBlock;
