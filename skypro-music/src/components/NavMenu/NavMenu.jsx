@@ -1,5 +1,5 @@
 import { useState } from "react";
-import * as S from '.navMenu.styles.js';
+import * as S from './navMenu.styles.js';
 import React from 'react';
 
 export const  NavMenu = () => {
