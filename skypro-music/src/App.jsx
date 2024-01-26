@@ -1,31 +1,26 @@
-//  import { useState } from 'react';
+import { AudioPlayer } from './components/AudioPlayer/AudioPlayer.jsx';
+import {NavMenu} from './components/NavMenu/NavMenu.jsx';
+import {CenterBlock} from './components/CenterBlock/CenterBlock.jsx';
+import {SideBar} from './components/SideBar/SideBar.jsx';
+import React from 'react';
+import { GlobalStyle } from './components/Global.styles/Global.styles.js'
+import * as S from './App.styles.js'
 
-
-
-import './App.css';
-import NavMenu from './components/NavMenu/NavMenu'
-import Centerblock from './components/Centerblock/Centerblock';
-import Sidebar from './components/Sidebar/Sidebar';
-import {AudioPlayer} from './components/AudioPlayer/AudioPlayer';
-
-
-
-
-function App() {
-  
+export const App = () => {
   return (
-    <div className="wrapper">
-      <div className="container">
-        <main className="main">
-          <NavMenu />
-          <Centerblock />
-          <Sidebar />
-        </main>
+  <>
+    <GlobalStyle />
+    <S.Wrapper>
+      <S.Container>
+        <S.Main>
+       <NavMenu />
+          <CenterBlock />
+          <SideBar />
+        </S.Main>
         <AudioPlayer />
-        <footer className="footer" />
-      </div>
-    </div>
+        <footer></footer>
+      </S.Container>
+    </S.Wrapper>
+    </>
   );
 }
-
-export default App;

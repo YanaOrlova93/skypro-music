@@ -1,88 +1,85 @@
-import Skeleton from 'react-loading-skeleton'
-import './Sidebar.css'
-import { useEffect, useState } from 'react'
+import React from 'react';
+import { useEffect, useState } from 'react';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import { SkeletonTheme } from 'react-loading-skeleton';
+import * as S from './SideBar.styles.js';
 
-
-function Sidebar () {
-  const [isLoading, setIsLoading] = useState(true)
+export const SideBar = () => {
+  const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-      setTimeout(() => {
-        setIsLoading(false)
-      }, 3000)
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 3000)
     }, [])
+    
+if (isLoading) {
+        
+return(
+  <SkeletonTheme baseColor="#202020"
+  highlightColor="#444"><S.MainSidebar>
+  <S.SidebarPersonal>
+    <S.SidebarPersonalName>Sergey.Ivanov</S.SidebarPersonalName>
+    <S.SidebarIcon>
+      <svg alt="logout">
+        <use xlinkHref="img/icon/sprite.svg#logout"></use>
+      </svg>
+    </S.SidebarIcon>
+  </S.SidebarPersonal>
+  <S.SidebarBlock>
+    <S.SidebarList>
+    <S.SidebarItem>
+                                <Skeleton
+                                    width={250}
+                                    height={150}
+                                    count={3}
+                                />
+      </S.SidebarItem>
+    </S.SidebarList>
+    </S.SidebarBlock>
+    </S.MainSidebar>
+    </SkeletonTheme>
+)}
 
-    if(isLoading) {
-      
-      return (
-        <div className="main__sidebar sidebar">
-            <div className="sidebar__personal">
-              <p className="sidebar__personal-name">Sergey.Ivanov</p>
-              <div className="sidebar__icon">
+return (
+<S.MainSidebar>
+            <S.SidebarPersonal>
+              <S.SidebarPersonalName>Sergey.Ivanov</S.SidebarPersonalName>
+              <S.SidebarIcon>
                 <svg alt="logout">
-                  <use xlinkHref="assets/icon/sprite.svg#logout"> </use>
+                  <use xlinkHref="img/icon/sprite.svg#logout"></use>
                 </svg>
-              </div>
-            </div>
-            <div className="sidebar__block">
-              <div className="sidebar__list">
-                <div className="sidebar__item">
-                  <Skeleton
-                    width={250}
-                    height={150}
-                    count={3}
-                    baseColor="#202020"
-                    highlightColor="#444"
-                  />
-                </div>
-              </div>
-            </div>
-        </div>
-      )
-    }
-    return (
-        <div className="main__sidebar sidebar">
-            <div className="sidebar__personal">
-              <p className="sidebar__personal-name">Sergey.Ivanov</p>
-              <div className="sidebar__icon">
-                <svg alt="logout">
-                  <use xlinkHref="assets/icon/sprite.svg#logout"> </use>
-                </svg>
-              </div>
-            </div>
-            <div className="sidebar__block">
-              <div className="sidebar__list">
-                <div className="sidebar__item">
-                  <a className="sidebar__link" href="http://">
-                    <img
-                      className="sidebar__img"
-                      src="assets/playlist01.png"
+              </S.SidebarIcon>
+            </S.SidebarPersonal>
+            <S.SidebarBlock>
+              <S.SidebarList>
+                <S.SidebarItem>
+                  <S.SidebarLink href="#">
+                    <S.SidebarImg
+                      src="img/playlist01.png"
                       alt="day's playlist"
                     />
-                  </a>
-                </div>
-                <div className="sidebar__item">
-                  <a className="sidebar__link" href="http://">
-                    <img
-                      className="sidebar__img"
-                      src="assets/playlist02.png"
+                  </S.SidebarLink>
+                </S.SidebarItem>
+                <S.SidebarItem>
+                  <S.SidebarLink href="#">
+                    <S.SidebarImg
+                      src="img/playlist02.png"
                       alt="day's playlist"
                     />
-                  </a>
-                </div>
-                <div className="sidebar__item">
-                  <a className="sidebar__link" href="http://">
-                    <img
-                      className="sidebar__img"
-                      src="assets/playlist03.png"
+                  </S.SidebarLink>
+                </S.SidebarItem>
+                <S.SidebarItem>
+                  <S.SidebarLink href="#">
+                    <S.SidebarImg
+                      src="img/playlist03.png"
                       alt="day's playlist"
                     />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+                  </S.SidebarLink>
+                </S.SidebarItem>
+              </S.SidebarList>
+            </S.SidebarBlock>
+          </S.MainSidebar>
     )
 }
-
-export default Sidebar;

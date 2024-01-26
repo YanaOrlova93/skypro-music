@@ -1,75 +1,37 @@
-import './Centerblock.css'
-import { useState } from 'react';
-import PlayList from '../PlayList/PlayList';
-import AuthorList from '../Search/AuthorList';
-import YearList from '../Search/YearList';
-import GenreList from '../Search/GenreList';
+import { TrackList } from './TrackList/TrackList.jsx';
+import React from 'react';
+import { FilterButtons } from '../PopupMenuButtons/PopupMenuButtons.jsx';
+import * as S from './CenterBlock.styles.js';
 
-
-
-function CenterBlock () {
-  const [filterActive, setFilterActive] = useState(null)
-  const toggleFilter = (nameFilter) => {
-    if (filterActive===nameFilter) {
-      setFilterActive(null)
-      return
-    }
-    setFilterActive(nameFilter)
-
-  }
-
-  
+export const CenterBlock = () => {
     return (
-        <div className="main__centerblock centerblock">
-        <div className="centerblock__search search">
-          <svg className="search__svg">
-            <use xlinkHref="img/icon/sprite.svg#icon-search" />
-          </svg>
-          <input
-            className="search__text"
-            type="search"
-            placeholder="Поиск"
-            name="search"
-          />
-        </div>
-        <h2 className="centerblock__h2">Треки</h2>
-        <div className="centerblock__filter filter">
-          <div className="filter__title">Искать по:</div>
-          <div className="wrapper-filter">
-            <div className={`filter__button button-author _btn-text ${filterActive === 'author' ? 'active-filter-button' : ''}`} onClick={() => toggleFilter("author")}>
-              исполнителю
-            </div>
-            {filterActive==='author' && <AuthorList/>}
-          </div> 
-          <div className="wrapper-filter">
-            <div className={`filter__button button-year _btn-text ${filterActive === 'year' ? 'active-filter-button' : ''}`}onClick={() => toggleFilter("year")}>
-              году выпуска
-            </div>
-            {filterActive==='year' && <YearList/>}
-          </div>        
-          <div className="wrapper-filter">
-            <div className={`filter__button button-genre _btn-text ${filterActive === 'genre' ? 'active-filter-button' : ''}`}onClick={() => toggleFilter("genre")}>
-              жанру
-            </div>
-            {filterActive==='genre' && <GenreList/>}             
-          </div>               
-        </div>
-        <div className="centerblock__content">
-          <div className="content__title playlist-title">
-            <div className="playlist-title__col col01">Трек</div>
-            <div className="playlist-title__col col02">ИСПОЛНИТЕЛЬ</div>
-            <div className="playlist-title__col col03">АЛЬБОМ</div>
-            <div className="playlist-title__col col04">
-              <svg className="playlist-title__svg" alt="time">
-                <use xlinkHref="img/icon/sprite.svg#icon-watch" />
-              </svg>
-            </div>
-            </div>
-            <PlayList />
-            </div>
-          </div>
-          
+<S.MainCenterBlock>
+            <S.CenterblockSearch>
+              <S.SearchSvg>
+                <use xlinkHref="img/icon/sprite.svg#icon-search"></use>
+              </S.SearchSvg>
+              <S.SearchText
+                type="search"
+                placeholder="Поиск"
+                name="search"
+              />
+            </S.CenterblockSearch>
+            <S.CenterblockH2>Треки</S.CenterblockH2>
+            <FilterButtons />
+            <S.CenterblockContent>
+              <S.ContentTitle className="playlist-title">
+                <S.PlayListTitleCol1>Трек</S.PlayListTitleCol1>
+                <S.PlayListTitleCol2>ИСПОЛНИТЕЛЬ</S.PlayListTitleCol2>
+                <S.PlayListTitleCol3>АЛЬБОМ</S.PlayListTitleCol3>
+                <S.PlayListTitleCol4>
+                  <S.PlayListTitleSvg alt="time">
+                    <use xlinkHref="img/icon/sprite.svg#icon-watch"></use>
+                  </S.PlayListTitleSvg>
+                </S.PlayListTitleCol4>
+              </S.ContentTitle>
+              <TrackList /> {TrackList()}
+            
+            </S.CenterblockContent>
+          </S.MainCenterBlock>
     )
 }
-
-export default CenterBlock;
