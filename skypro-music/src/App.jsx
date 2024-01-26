@@ -6,7 +6,7 @@ import './App.css';
 import NavMenu from './components/NavMenu/NavMenu'
 import Centerblock from './components/Centerblock/Centerblock';
 import Sidebar from './components/Sidebar/Sidebar';
-import AudioPlayer from './components/AudioPlayer/AudioPlayer';
+import {AudioPlayer} from './components/AudioPlayer/AudioPlayer';
 
 
 
