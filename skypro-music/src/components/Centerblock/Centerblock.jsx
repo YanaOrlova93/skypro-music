@@ -1,7 +1,10 @@
-import { TrackList } from './TrackList/TrackList.jsx';
+
 import React from 'react';
 import { FilterButtons } from '../PopupMenuButtons/PopupMenuButtons.jsx';
 import * as S from './CenterBlock.styles.js';
+import { TrackList } from '../TrackList/TrackList.jsx';
+
+
 
 export const CenterBlock = () => {
     return (
