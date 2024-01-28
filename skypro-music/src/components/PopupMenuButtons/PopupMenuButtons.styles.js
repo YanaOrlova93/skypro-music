@@ -1,5 +1,5 @@
-import { styled } from 'styled-components';
-
+// import { styled } from 'styled-components';
+import styled, { css } from 'styled-components';
 export const CenterblockFilter = styled.div`
     display: -webkit-box;
     display: -ms-flexbox;
@@ -29,7 +29,7 @@ export const FilterContent = styled.div`
     }
 `
 
-export const FilterButton = styled.div`
+export const FilterButton = styled.button`
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -43,19 +43,13 @@ export const FilterButton = styled.div`
         
     }
     
-     
-    border: ${(props) =>
-        props.$isActive ? '1px solid #ad61ff' : '1px solid #ffffff'};
-    color: ${(props) => (props.$isActive ? '#ad61ff' : '')};
+    ${props => props.isActive && css`
+    color: #d9b6ff; // Цвет текста для активной кнопки
+    border-color: #ad61ff; // Цвет границы для активной кнопки
+    cursor: pointer;
+  `}
+`;
 
 
 
-`
-
-// active-filter-button {
-//     border-color: #d9b6ff;
-//     color: #d9b6ff;
-//     cursor: pointer;
   
-//   } 
-
