@@ -18,12 +18,35 @@ export const PopupList = styled.ul`
     margin-top: 10px;
     overflow-x: hidden;
     overflow-y: hidden;
-`
 
-export const PopupItem = styled.li`
+    &::-webkit-scrollbar {
+        width: 8px;
+      }
+    
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+        background-color: #f9f9fd;
+        border-radius: 10px;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: linear-gradient(315deg, rgb(22, 123, 217), rgb(89, 20, 146));
+      }
+    
+      &:hover {
+        border: 1px solid #9A48F1;
+      }
+    
+      
+    `;
+
+
+
+  export const PopupItem = styled.li`
     padding: 10px;
     transition: all 0.3s;
-&:hover {
+    &:hover {
     color: blueviolet;
     cursor: pointer;
     text-decoration: underline; 
