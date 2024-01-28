@@ -40,8 +40,22 @@ export const FilterButton = styled.div`
         border-color: #d9b6ff;
         color: #d9b6ff;
         cursor: pointer;
+        
     }
+    
+     
     border: ${(props) =>
         props.$isActive ? '1px solid #ad61ff' : '1px solid #ffffff'};
     color: ${(props) => (props.$isActive ? '#ad61ff' : '')};
+
+
+
 `
+
+// active-filter-button {
+//     border-color: #d9b6ff;
+//     color: #d9b6ff;
+//     cursor: pointer;
+  
+//   } 
+

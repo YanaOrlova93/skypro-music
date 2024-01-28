@@ -1,23 +1,22 @@
 import { styled } from 'styled-components';
-import 'overlayscrollbars/overlayscrollbars.css';
+// import 'overlayscrollbars/overlayscrollbars.css';
 
 export const PopupList = styled.ul`
     display: flex;
     flex-direction: column;
+    gap: 28px;
     background-color: #313131;
     color: #fff;
-    max-height: 250px;
-    max-width: 400px;
+    max-height: 305px;
+    width: 248px;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 34px;
+    border: 1px solid #FFF;
     border-radius: 12px;
-    z-index: 2;
     position: absolute;
+    top: 35px;
     left: 0;
-    overflow: scroll;
-    margin-top: 10px;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: scroll;
 
     &::-webkit-scrollbar {
         width: 8px;
@@ -37,7 +36,7 @@ export const PopupList = styled.ul`
       &:hover {
         border: 1px solid #9A48F1;
       }
-    
+     
       
     `;
 
