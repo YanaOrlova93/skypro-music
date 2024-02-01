@@ -1,7 +1,7 @@
 import { AudioPlayer } from '../../components/AudioPlayer/AudioPlayer.jsx';
-import {NavMenu} from '../../components/NavMenu/NavMenu.jsx';
-import {CenterBlock} from '../../components/CenterBlock/CenterBlock.jsx';
-import {SideBar} from '../../components/SideBar/SideBar.jsx';
+import {NavMen} from '../../components/NavMen/NavMen.jsx';
+import {CenterBlockk} from '../../components/CenterBlockk/CenterBlockk.jsx';
+import {SideBarr} from '../../components/SideBarr/SideBarr.jsx';
 import React from 'react';
 import { GlobalStyle } from '../../components/Global.styles/Global.styles.js';
 import * as S from './main.styles.js';
@@ -13,9 +13,9 @@ export const MainPage = () => {
     <S.Wrapper>
       <S.Container>
         <S.Main>
-       <NavMenu />
-          <CenterBlock />
-          <SideBar />
+       <NavMen/>
+          <CenterBlockk />
+          <SideBarr />
         </S.Main>
         <AudioPlayer />
         <footer></footer>

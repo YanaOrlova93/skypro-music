@@ -1,13 +1,13 @@
 
 import React from 'react';
 import { FilterButtons } from '../PopupMenuButtons/PopupMenuButtons.jsx';
-import * as S from './CenterBlock.styles.js';
+import * as S from './CenterBlockk.styles.js';
 import { TrackList } from '../TrackList/TrackList.jsx';
 
 
 
 
-export const CenterBlock = () => {
+export const CenterBlockk = () => {
     return (
 <S.MainCenterBlock>
             <S.CenterblockSearch>

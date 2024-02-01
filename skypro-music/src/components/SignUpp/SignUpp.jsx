@@ -1,8 +1,9 @@
 import React from 'react';
-import * as S from './SignUp.slyles.js';
-import { GlobalStyle } from '../../components/Global.styles/Global.styles.js';
+import * as S from './SignUpp.slyles.js';
+import { GlobalStyle } from '../../Global.styles.js'
 
-export const SignUp = () => {
+
+export const SignUpp = () => {
     return(
     <>
       <GlobalStyle />
@@ -10,11 +11,11 @@ export const SignUp = () => {
         <S.ContainerEnter >
           <S.ModalBlock>
             <S.ModalFormLogin action="#">
-            <S.ModalButtonLink to="/">
+              <a href="../">
                 <S.ModalLogo>
                   <img src="../img/logo_modal.png" alt="logo" />
                 </S.ModalLogo>
-            </S.ModalButtonLink>
+              </a>
               <S.ModalInput
                 type="text"
                 name="login"
@@ -25,13 +26,11 @@ export const SignUp = () => {
                 name="password"
                 placeholder="Пароль"
               />
-              <S.ModalInput
-                type="password"
-                name="password"
-                placeholder="Повторите пароль"
-              />
               <S.ModalBtnEnter>
-              <S.ModalButtonLink to="/">Зарегистрироваться</S.ModalButtonLink>
+                <a href="../index.html">Войти</a>
+              </S.ModalBtnEnter>
+              <S.ModalBtnEnter>
+                <a href="signup.html">Зарегистрироваться</a>
               </S.ModalBtnEnter>
             </S.ModalFormLogin>
           </S.ModalBlock>
