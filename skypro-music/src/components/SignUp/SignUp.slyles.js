@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
     overflow: hidden;
 `
 
+
 export const ContainerEnter = styled.div`
     max-width: 100%;
     height: 100vh;

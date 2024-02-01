@@ -14,6 +14,7 @@ export const NavLogo = styled.div`
     margin-bottom: 20px;
 `
 
+
 export const LogoImg = styled.img`
     width: 113.33px;
     height: 17px;

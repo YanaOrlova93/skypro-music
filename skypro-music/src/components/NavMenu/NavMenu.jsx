@@ -7,6 +7,7 @@ export const NavMenu = () => {
   const [visible, setVisible] = useState(false);
   const toggleVisibility = () => setVisible(!visible);
   
+  
     return(
         <S.MainNav>
             <S.NavLogo>

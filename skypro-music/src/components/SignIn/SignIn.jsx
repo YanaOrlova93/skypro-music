@@ -2,6 +2,7 @@ import React from 'react';
 import * as S from './SignIn.styles.js';
 import { GlobalStyle } from '../../Global.styles.js'
 
+
 export const SignIn = () => {
     return(
     <>

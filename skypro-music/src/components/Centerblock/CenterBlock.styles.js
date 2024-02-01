@@ -117,6 +117,7 @@ export const PlayListTitleCol1 = styled.div`
     width: 447px;
 `
 
+
 export const PlayListTitleCol2 = styled.div`
     font-style: normal;
     font-weight: 400;
