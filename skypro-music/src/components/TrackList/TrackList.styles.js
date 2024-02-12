@@ -71,6 +71,9 @@ export const TrackTitleSvg = styled.svg`
     stroke: #4e4e4e;
 `
 
+export const TrackTitleText = styled.div`
+`
+
 export const TrackTitleLink = styled.a`
     font-style: normal;
     font-weight: 400;
@@ -117,7 +120,8 @@ export const TrackAlbumLink = styled.a`
     line-height: 24px;
     color: #696969;
 `
-
+export const TrackTime = styled.div`
+  `
 export const TrackTimeSvg = styled.svg`
     width: 14px;
     height: 12px;
@@ -133,4 +137,13 @@ export const TrackTimeText = styled.span`
     line-height: 24px;
     text-align: right;
     color: #696969;
+`
+export const LoadingTracksError = styled.p`
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 64px;
+text-align: center;
+color: red;
+padding: 20px;
 `

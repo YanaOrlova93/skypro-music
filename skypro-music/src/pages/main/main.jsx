@@ -1,4 +1,4 @@
-import { AudioPlayer } from '../../components/AudioPlayer/AudioPlayer.jsx';
+import  {AudioPlayer}  from '../../components/AudioPlayer/AudioPlayer.jsx';
 import {NavMen} from '../../components/NavMen/NavMen.jsx';
 import {CenterBlockk} from '../../components/CenterBlockk/CenterBlockk.jsx';
 import {SideBarr} from '../../components/SideBarr/SideBarr.jsx';

@@ -9,7 +9,8 @@ import { Protection } from './components/Protection/Protection.jsx';
 import React from 'react';
 
 
-export const AppRoutes = ({user}) => {
+export const AppRoutes = ({user, tracks, setTracks, isLoading, setIsLoading, isPlayerVisible, setIsPlayerVisible,
+    loadingTracksError, setActiveTrack}) => {
     return(
         <Routes>
             <Route path="/login" element={<Login />}></Route>
@@ -17,7 +18,19 @@ export const AppRoutes = ({user}) => {
             <Route path="*" element={<NotFoundPage />}></Route>
             <Route element={<Protection isAllowed={Boolean(user)} />}>
                 <Route path="/favorites" element={<MyTracksPage />}></Route>
-                <Route path="/" element={<MainPage />}></Route>
+                <Route path="/" element={
+                <MainPage 
+                     tracks={tracks}
+                    setTracks={setTracks}
+                    isLoading={isLoading}
+                    setIsLoading={setIsLoading}
+                    isPlayerVisible={isPlayerVisible}
+                    setIsPlayerVisible={setIsPlayerVisible}
+                    loadingTracksError={loadingTracksError}
+                    setActiveTrack={setActiveTrack}
+                    />
+                    }
+                    ></Route>
                 <Route path="/category/:id" element={<PlaylistPage />}></Route>
             </Route>
         </Routes>

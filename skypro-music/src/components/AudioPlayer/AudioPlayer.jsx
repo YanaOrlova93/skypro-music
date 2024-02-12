@@ -1,18 +1,32 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import * as S from './AudioPlayer.styles.js';
 
-export const AudioPlayer = () => {
-  const [isLoading, setIsLoading] = useState(true)
-    useEffect(() => {
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 3000)
-    }, [])
+export const AudioPlayer = ({ isPlayerVisible, isLoading, }) => {
+  // const [isLoading, setIsLoading] = useState(true)
+  //   useEffect(() => {
+  //       setTimeout(() => {
+  //           setIsLoading(false)
+  //       }, 3000)
+  //   }, [])
 
     return (
+      isPlayerVisible && (
+        //  <>
+        //  <audio
+        //            controls="controls"
+        //             src={activeTrack.track_file}
+        //             ref={audioRef}
+        //             autoPlay={true}
+        //             onTimeUpdate={() => {
+        //                 setCurrentTime(audioRef.current.currentTime)
+        //             }}
+        //         ></audio>
+        //         <S.TrackTime>
+        //           {duration && ConvertTime(currentTime)} / {duration && ConvertTime(duration)}
+        //         </S.TrackTime>
 <S.Bar>
           <S.BarContent>
             <S.BarPlayerProgress></S.BarPlayerProgress>
@@ -121,5 +135,7 @@ export const AudioPlayer = () => {
             </S.BarPlayerBlock>
           </S.BarContent>
         </S.Bar>
-        );
-};
+      )
+    );
+}
+// export default AudioPlayer;
