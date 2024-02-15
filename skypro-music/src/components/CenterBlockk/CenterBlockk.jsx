@@ -7,7 +7,8 @@ import { TrackList } from '../TrackList/TrackList.jsx';
 
 
 
-export const CenterBlockk = ( tracks, isLoading, setIsPlayerVisible, loadingTracksError, setActiveTrack,) => {
+export const CenterBlockk = ( {tracks, isLoading, setIsPlayerVisible, loadingTracksError, setActiveTrack} ) => {
+  
     return (
 <S.MainCenterBlock>
             <S.CenterblockSearch>
@@ -33,14 +34,19 @@ export const CenterBlockk = ( tracks, isLoading, setIsPlayerVisible, loadingTrac
                   </S.PlayListTitleSvg>
                 </S.PlayListTitleCol4>
               </S.ContentTitle>
-              {TrackList(
+              <TrackList 
+            tracks={tracks}
+            isLoading={isLoading}
+            loadingTracksError={loadingTracksError}
+            />
+              {/* {TrackList(
                     tracks,
                     isLoading,
                     setIsPlayerVisible,
                     loadingTracksError,
                     setActiveTrack,
   
-                )}
+                )} */}
             </S.CenterblockContent>
           </S.MainCenterBlock>
     )
