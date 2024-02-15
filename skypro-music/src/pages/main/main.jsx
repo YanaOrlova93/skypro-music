@@ -5,27 +5,31 @@ import {SideBarr} from '../../components/SideBarr/SideBarr.jsx';
 import React from 'react';
 import { GlobalStyle } from '../../components/Global.styles/Global.styles.js';
 import * as S from './main.styles.js';
-import { useEffect, useState } from 'react';
-import { getAllTracks } from '../../Api.jsx';
+// import { useEffect, useState } from 'react';
+// import { getAllTracks } from '../../Api.jsx';
 
 export const MainPage = ({ 
+   tracks,
+   isLoading,
    setIsPlayerVisible,
-   setActiveTrack }) => {
-  const [tracks, setTracks] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadingTracksError, setLoadingTracksError] = useState(false);
+   setActiveTrack,
+   loadingTracksError
+   }) => {
+  // const [tracks, setTracks] = useState([]);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [loadingTracksError, setLoadingTracksError] = useState(false);
   // const [isPlayerVisible, setIsPlayerVisible] = useState(false)
 
-  useEffect (() => {
-    getAllTracks()
-      .then((response) => {
-        setTracks(response)
-      })
-      .catch((error) => {
-        setLoadingTracksError(error.message)
-      })
-      .finally(() => setIsLoading(false))
-  },[]);
+  // useEffect (() => {
+  //   getAllTracks()
+  //     .then((response) => {
+  //       setTracks(response)
+  //     })
+  //     .catch((error) => {
+  //       setLoadingTracksError(error.message)
+  //     })
+  //     .finally(() => setIsLoading(false))
+  // },[]);
 
   return (
   <>
@@ -45,8 +49,8 @@ export const MainPage = ({
            />
           <SideBarr />
         </S.Main>
-        <AudioPlayer 
-         />
+        {/* <AudioPlayer 
+         /> */}
         <footer></footer>
       </S.Container>
     </S.Wrapper>
