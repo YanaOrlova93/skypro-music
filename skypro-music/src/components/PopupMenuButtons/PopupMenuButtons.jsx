@@ -19,7 +19,7 @@ export const FilterButtons = () => {
       <S.FilterTitle>Искать по:</S.FilterTitle>
       <S.FilterContent className="filter__content">
         <S.FilterButton
-        isActive={filterActive === "author"}
+        $isActive={filterActive === "author"}
         onClick={() => toggleFilter("author")}
         //   className={`filter__button button-author _btn-text ${
         //     filterActive === "author" ? "active-filter-button" : ""
@@ -32,7 +32,7 @@ export const FilterButtons = () => {
       </S.FilterContent>
       <S.FilterContent className="filter__content">
         <S.FilterButton
-        isActive={filterActive === "year"}
+        $isActive={filterActive === "year"}
         onClick={() => toggleFilter("year")}
         //   className={`filter__button button-year _btn-text ${
         //     filterActive === "year" ? "active-filter-button" : ""
@@ -45,7 +45,7 @@ export const FilterButtons = () => {
       </S.FilterContent>
       <S.FilterContent className="filter__content">
         <S.FilterButton
-        isActive={filterActive === "genre"}
+        $isActive={filterActive === "genre"}
         onClick={() => toggleFilter("genre")}
         //   className={`filter__button button-genre _btn-text ${
         //     filterActive === "genre" ? "active-filter-button" : ""
