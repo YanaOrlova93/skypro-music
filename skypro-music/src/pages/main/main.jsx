@@ -8,10 +8,13 @@ import * as S from './main.styles.js';
 import { useEffect, useState } from 'react';
 import { getAllTracks } from '../../Api.jsx';
 
-export const MainPage = () => {
+export const MainPage = ({ 
+   setIsPlayerVisible,
+   setActiveTrack }) => {
   const [tracks, setTracks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [loadingTracksError, setLoadingTracksError] = useState(false);
+  // const [isPlayerVisible, setIsPlayerVisible] = useState(false)
 
   useEffect (() => {
     getAllTracks()
@@ -35,10 +38,15 @@ export const MainPage = () => {
           tracks={tracks}
           isLoading={isLoading}
           loadingTracksError={loadingTracksError}
+          // isPlayerVisible={isPlayerVisible}
+          setIsPlayerVisible={setIsPlayerVisible}
+          setActiveTrack={setActiveTrack}
+         
            />
           <SideBarr />
         </S.Main>
-        <AudioPlayer />
+        <AudioPlayer 
+         />
         <footer></footer>
       </S.Container>
     </S.Wrapper>

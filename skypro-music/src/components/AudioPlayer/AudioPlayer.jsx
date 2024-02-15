@@ -4,14 +4,14 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import * as S from './AudioPlayer.styles.js';
 
-export const AudioPlayer = ({ isPlayerVisible, isLoading, }) => {
+export const AudioPlayer = ({ isPlayerVisible, isLoading, activeTrack}) => {
   // const [isLoading, setIsLoading] = useState(true)
   //   useEffect(() => {
   //       setTimeout(() => {
   //           setIsLoading(false)
   //       }, 3000)
   //   }, [])
-
+console.log(activeTrack);
     return (
       isPlayerVisible && (
         //  <>
@@ -85,7 +85,7 @@ export const AudioPlayer = ({ isPlayerVisible, isLoading, }) => {
                                         />
                                     ) : (
                       <S.TrackPlayAuthorLink href="http://"
-                        >Ты та...</S.TrackPlayAuthorLink>
+                        >{activeTrack.name}</S.TrackPlayAuthorLink>
                       )}
                     </S.TrackPlayAuthor>
                     <S.TrackPlayAlbum>
@@ -96,7 +96,7 @@ export const AudioPlayer = ({ isPlayerVisible, isLoading, }) => {
                                             highlightColor="#444"
                                         />
                                     ) : (
-                      <S.TrackPlayAlbumLink href="http://">Баста</S.TrackPlayAlbumLink>
+                      <S.TrackPlayAlbumLink href="http://">{activeTrack.author}</S.TrackPlayAlbumLink>
                                     )}
                     </S.TrackPlayAlbum>
                   </S.TrackPlayContain>

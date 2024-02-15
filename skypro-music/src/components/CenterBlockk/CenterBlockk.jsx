@@ -4,11 +4,21 @@ import { FilterButtons } from '../PopupMenuButtons/PopupMenuButtons.jsx';
 import * as S from './CenterBlockk.styles.js';
 import { TrackList } from '../TrackList/TrackList.jsx';
 
+// import { useState } from 'react';
 
 
+export const CenterBlockk = ( {tracks, isLoading,loadingTracksError, setIsPlayerVisible, setActiveTrack} ) => {
+  // const [filterActive, setFilterActive] = useState(null)
+  // const toggleFilter = (nameFilter) => {
+  //   if (filterActive===nameFilter) {
+  //     setFilterActive(null)
+  //     return
+  //   }
+  //   setFilterActive(nameFilter)
 
-export const CenterBlockk = ( {tracks, isLoading, setIsPlayerVisible, loadingTracksError, setActiveTrack} ) => {
-  
+  // }
+
+
     return (
 <S.MainCenterBlock>
             <S.CenterblockSearch>
@@ -38,6 +48,8 @@ export const CenterBlockk = ( {tracks, isLoading, setIsPlayerVisible, loadingTra
             tracks={tracks}
             isLoading={isLoading}
             loadingTracksError={loadingTracksError}
+            setIsPlayerVisible={setIsPlayerVisible}
+            setActiveTrack={setActiveTrack}
             />
               {/* {TrackList(
                     tracks,
