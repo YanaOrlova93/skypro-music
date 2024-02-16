@@ -12,6 +12,8 @@ export const TrackList = ({
   loadingTracksError, 
   setActiveTrack, }) => {
 
+
+    console.log(isLoading); // Проверка текущего состояния isLoading
 return (
   <>
 {/* <OverlayScrollbarsComponent options={{ scrollbars: { autoHide: 'auto' } }}> */}
