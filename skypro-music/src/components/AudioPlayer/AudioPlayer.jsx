@@ -1,15 +1,21 @@
-import React, { useRef, useState } from 'react';
-// import { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
-// import { Skeleton } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import * as S from './AudioPlayer.styles.js';
+import { ConvertTime, FunctionMissing } from '../../Helpers.jsx';
 
 export const AudioPlayer = ({ isPlayerVisible, isLoading, activeTrack}) => {
 
 const [isPlay, setIsPlay] = useState(true)
 const [isLoop, setIsLoop] = useState(false)
+
+const [currentTime, setCurrentTime] = useState(0);
+
+
+const progressRef = useRef(null)
 const audioRef = useRef()
+const duration = audioRef.current ? audioRef.current.duration : 0
+
 
 const play = () => {
 audioRef.current.play()
@@ -22,11 +28,16 @@ const pause = () => {
   }
 
 const togglePlay = isPlay ? pause : play
-const changeVolume= (value)=>{
 
+const changeVolume= (value)=>{
 audioRef.current.volume=value/100
 }
-// console.log(audioRef.current.volume);
+const changeProgress= (event)=>{
+const newTime = event.target.value;
+audioRef.current.currentTime = newTime;
+setCurrentTime(newTime);
+};
+  
     return (
       isPlayerVisible && (
         //  <>
@@ -40,17 +51,32 @@ audioRef.current.volume=value/100
                     ref={audioRef}
                     autoPlay
                     loop={isLoop}
-                    // onTimeUpdate={() => {
-                    //     setCurrentTime(audioRef.current.currentTime)
-                    // }}
+                    onTimeUpdate={() => {
+                        setCurrentTime(audioRef.current.currentTime)
+                        
+                    }}
                 ></audio>
-                {/* <S.TrackTime>
+                <S.TrackTime>
                   {duration && ConvertTime(currentTime)} / {duration && ConvertTime(duration)}
-                </S.TrackTime> */}
+                </S.TrackTime>
 
 
           <S.BarContent>
-            <S.BarPlayerProgress ></S.BarPlayerProgress>
+            <S.BarPlayerProgress 
+            ref={progressRef}
+              type="range"
+              min={0}
+              value={currentTime}
+              step={0.01}
+              onChange={changeProgress}
+              // onChange={(event)=>changeProgress(event.target.value)}
+              // onChange={(a) => {
+              //   progressRef.current.currentTime = a.target.value;
+              // }}
+              $color="#ff0000" /> 
+               
+                      {/* type="range"
+                      name="range" */}
             <S.BarPlayerBlock>
               <S.BarPlayer>
                 <S.PlayerControls>
