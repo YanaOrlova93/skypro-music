@@ -66,22 +66,27 @@ setCurrentTime(newTime);
             ref={progressRef}
               type="range"
               min={0}
+              max={duration}
               value={currentTime}
               step={0.01}
-              onChange={changeProgress}
+              // onChange={changeProgress}
+              onChange={() => {
+                setCurrentTime(progressRef.current.value)
+                audioRef.current.currentTime =
+                    progressRef.current.value
+            }}
               // onChange={(event)=>changeProgress(event.target.value)}
               // onChange={(a) => {
               //   progressRef.current.currentTime = a.target.value;
               // }}
               $color="#ff0000" /> 
                
-                      {/* type="range"
-                      name="range" */}
             <S.BarPlayerBlock>
               <S.BarPlayer>
                 <S.PlayerControls>
                   <S.BtnPrev>
-                    <S.PlayerBtnPrevSvg alt="prev">
+                    <S.PlayerBtnPrevSvg 
+                    alt="prev">
                       <use xlinkHref="img/icon/sprite.svg#icon-prev"></use>
                     </S.PlayerBtnPrevSvg>
                   </S.BtnPrev>
