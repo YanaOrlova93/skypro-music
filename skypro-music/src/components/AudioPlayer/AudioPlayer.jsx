@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 // import { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 // import { Skeleton } from 'react-loading-skeleton';
@@ -6,31 +6,51 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import * as S from './AudioPlayer.styles.js';
 
 export const AudioPlayer = ({ isPlayerVisible, isLoading, activeTrack}) => {
-  // const [isLoading, setIsLoading] = useState(true)
-  //   useEffect(() => {
-  //       setTimeout(() => {
-  //           setIsLoading(false)
-  //       }, 3000)
-  //   }, [])
-console.log(activeTrack);
+
+const [isPlay, setIsPlay] = useState(true)
+const [isLoop, setIsLoop] = useState(false)
+const audioRef = useRef()
+
+const play = () => {
+audioRef.current.play()
+setIsPlay(true)
+}
+
+const pause = () => {
+  audioRef.current.pause()
+  setIsPlay(false)
+  }
+
+const togglePlay = isPlay ? pause : play
+const changeVolume= (value)=>{
+
+audioRef.current.volume=value/100
+}
+// console.log(audioRef.current.volume);
     return (
       isPlayerVisible && (
         //  <>
-        //  <audio
-        //            controls="controls"
-        //             src={activeTrack.track_file}
-        //             ref={audioRef}
-        //             autoPlay={true}
-        //             onTimeUpdate={() => {
-        //                 setCurrentTime(audioRef.current.currentTime)
-        //             }}
-        //         ></audio>
-        //         <S.TrackTime>
-        //           {duration && ConvertTime(currentTime)} / {duration && ConvertTime(duration)}
-        //         </S.TrackTime>
+        
+        
 <S.Bar>
+
+<audio
+                   controls="controls"
+                    src={activeTrack.track_file}
+                    ref={audioRef}
+                    autoPlay
+                    loop={isLoop}
+                    // onTimeUpdate={() => {
+                    //     setCurrentTime(audioRef.current.currentTime)
+                    // }}
+                ></audio>
+                {/* <S.TrackTime>
+                  {duration && ConvertTime(currentTime)} / {duration && ConvertTime(duration)}
+                </S.TrackTime> */}
+
+
           <S.BarContent>
-            <S.BarPlayerProgress></S.BarPlayerProgress>
+            <S.BarPlayerProgress ></S.BarPlayerProgress>
             <S.BarPlayerBlock>
               <S.BarPlayer>
                 <S.PlayerControls>
@@ -39,9 +59,9 @@ console.log(activeTrack);
                       <use xlinkHref="img/icon/sprite.svg#icon-prev"></use>
                     </S.PlayerBtnPrevSvg>
                   </S.BtnPrev>
-                  <S.PlayerBtnPlay>
+                  <S.PlayerBtnPlay onClick={togglePlay}>
                     <S.PlayerBtnPlaySvg alt="play">
-                      <use xlinkHref="img/icon/sprite.svg#icon-play"></use>
+                      <use xlinkHref= {`img/icon/sprite.svg#${isPlay ? "icon-pause" : "icon-play"}`}></use>
                     </S.PlayerBtnPlaySvg>
                   </S.PlayerBtnPlay>
                   <S.PlayerBtnNext>
@@ -49,7 +69,7 @@ console.log(activeTrack);
                       <use xlinkHref="img/icon/sprite.svg#icon-next"></use>
                     </S.PlayerBtnNextSvg>
                   </S.PlayerBtnNext>
-                  <S.PlayerBtnRepeat>
+                  <S.PlayerBtnRepeat onClick={()=> setIsLoop(!isLoop)} >
                     <S.PlayerBtnRepeatSvg alt="repeat">
                       <use xlinkHref="img/icon/sprite.svg#icon-repeat"></use>
                     </S.PlayerBtnRepeatSvg>
@@ -127,6 +147,7 @@ console.log(activeTrack);
                   </S.VolumeImage>
                   <S.VolumeProgress>
                     <S.VolumeProgressLine
+                    onChange={(event)=>changeVolume(event.target.value)}
                       type="range"
                       name="range"
                     />

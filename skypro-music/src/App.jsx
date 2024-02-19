@@ -5,7 +5,6 @@ import { GlobalStyle } from './components/Global.styles/Global.styles.js';
 import * as S from './App.styles.js';
 import { AppRoutes } from './routes.jsx'
 
-
 import { useEffect, useState } from 'react';
 import { getAllTracks } from './Api.jsx';
 import {AudioPlayer} from './components/AudioPlayer/AudioPlayer';
