@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import { Login } from './pages/SignInn/SignInn.jsx';
-import { SignUpp } from './pages/SignUpp/SignUpp.jsx';
+import { Login } from './pages/SignIn/SignIn.jsx';
+import { SignUp } from './pages/SignUp/SignUp.jsx';
 import { MainPage } from './pages/main/main.jsx';
 import { NotFoundPage } from './pages/NotFound/NotFound.jsx';
 import { MyTracksPage } from './pages/myTrack/myTrack.jsx';
@@ -14,7 +14,7 @@ export const AppRoutes = ({user, tracks, setTracks, isLoading, setIsLoading, isP
     return(
         <Routes>
             <Route path="/login" element={<Login />}></Route>
-            <Route path="/SignUpp" element={<SignUpp />}></Route>
+            <Route path="/SignUpp" element={<SignUp />}></Route>
             <Route path="*" element={<NotFoundPage />}></Route>
             <Route element={<Protection isAllowed={Boolean(user)} />}>
                 <Route path="/favorites" element={<MyTracksPage />}></Route>
