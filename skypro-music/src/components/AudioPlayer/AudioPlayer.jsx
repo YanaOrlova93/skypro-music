@@ -12,6 +12,7 @@ const [isLoop, setIsLoop] = useState(false)
 const [currentTime, setCurrentTime] = useState(0);
 
 
+
 const progressRef = useRef(null)
 const audioRef = useRef()
 const duration = audioRef.current ? audioRef.current.duration : 0
