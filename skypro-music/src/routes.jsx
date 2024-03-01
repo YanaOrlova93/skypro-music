@@ -14,7 +14,7 @@ export const AppRoutes = ({user, tracks, setTracks, isLoading, setIsLoading, isP
     return(
         <Routes>
             <Route path="/login" element={<Login />}></Route>
-            <Route path="/SignUpp" element={<SignUp />}></Route>
+            <Route path="/SignUp" element={<SignUp />}></Route>
             <Route path="*" element={<NotFoundPage />}></Route>
             <Route element={<Protection isAllowed={Boolean(user)} />}>
                 <Route path="/favorites" element={<MyTracksPage />}></Route>
