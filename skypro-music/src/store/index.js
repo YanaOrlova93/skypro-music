@@ -1,8 +1,8 @@
-// import { configureStore } from '@reduxjs/toolkit'
-// import { trackReducer } from './slices'
+import { configureStore } from '@reduxjs/toolkit'
+import { trackReducer } from './slices'
 
-// export default configureStore({
-//     reducer: {
-//         tracks: trackReducer,
-//     },
-// })
+export default configureStore({
+    reducer: {
+        tracks: trackReducer,
+    },
+})
