@@ -70,16 +70,13 @@ setCurrentTime(newTime);
               max={duration}
               value={currentTime}
               step={0.01}
-              // onChange={changeProgress}
+           
               onChange={() => {
                 setCurrentTime(progressRef.current.value)
                 audioRef.current.currentTime =
                     progressRef.current.value
             }}
-              // onChange={(event)=>changeProgress(event.target.value)}
-              // onChange={(a) => {
-              //   progressRef.current.currentTime = a.target.value;
-              // }}
+              
               $color="#ff0000" /> 
                
             <S.BarPlayerBlock>
