@@ -1,11 +1,11 @@
 import React from "react";
 import * as S from "./AuthorList.styles.js";
-// import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
+import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
 
 export const GenreList = () => {
   return (
     <S.PopupList>
-      {/* <OverlayScrollbarsComponent> */}
+      <OverlayScrollbarsComponent>
         <S.BlockScroll>
           <S.PopupItem>Рок</S.PopupItem>
           <S.PopupItem>Хип-хоп</S.PopupItem>
@@ -13,7 +13,7 @@ export const GenreList = () => {
           <S.PopupItem>Техно</S.PopupItem>
           <S.PopupItem>Инди</S.PopupItem>
         </S.BlockScroll>
-      {/* </OverlayScrollbarsComponent> */}
+      </OverlayScrollbarsComponent>
     </S.PopupList>
   );
 };

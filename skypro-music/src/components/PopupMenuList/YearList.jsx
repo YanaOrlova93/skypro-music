@@ -1,11 +1,11 @@
 import React from "react";
 import * as S from "./AuthorList.styles.js";
-// import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
+import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
 
 export const YearList = () => {
   return (
     <S.PopupList>
-      {/* <OverlayScrollbarsComponent> */}
+      <OverlayScrollbarsComponent>
         <S.BlockScroll>
           <S.PopupItem>1991</S.PopupItem>
           <S.PopupItem>1992</S.PopupItem>
@@ -14,7 +14,7 @@ export const YearList = () => {
           <S.PopupItem>1995</S.PopupItem>
           <S.PopupItem>1996</S.PopupItem>
         </S.BlockScroll>
-      {/* </OverlayScrollbarsComponent> */}
+      </OverlayScrollbarsComponent>
     </S.PopupList>
   );
 };

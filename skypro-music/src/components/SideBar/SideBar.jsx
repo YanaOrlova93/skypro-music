@@ -1,10 +1,9 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { SkeletonTheme } from "react-loading-skeleton";
 import * as S from "./SideBar.styles.js";
-import { Categories } from '../../constant';
+import { Categories } from '../../constant.jsx';
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../Authorization.jsx";
@@ -19,15 +18,7 @@ export const SideBar = ({ isLoading }) => {
   const [userData] = useContext(UserContext);
 
   if (isLoading) {
-    //   const [isLoading, setIsLoading] = useState(true);
-
-    //     useEffect(() => {
-    //         setTimeout(() => {
-    //             setIsLoading(false)
-    //         }, 3000)
-    //     }, [])
-
-    // if (isLoading) {
+  
 
     return (
       <SkeletonTheme baseColor="#202020" highlightColor="#444">
