@@ -28,3 +28,7 @@ export const Main = styled.main`
     -ms-flex-pack: justify;
     justify-content: space-between;
 `
+
+export const AudioHTML = styled.audio`
+    display: none;
+`
