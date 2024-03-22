@@ -73,6 +73,7 @@ export const App = () => {
                            togglePlay={togglePlay}
                            playlist={playlist}
                            setPlaylist={setPlaylist}
+                           setLoadingTracksError={setLoadingTracksError}
                         />
                         {AudioPlayer({ audioRef,
                                 togglePlay,
@@ -80,7 +81,9 @@ export const App = () => {
                                 isPlayerVisible,
                                 isLoading,
                                 playlist,
-                                setPlaylist, })}
+                                setPlaylist,
+                                setLoadingTracksError,
+                                setIsLoading, })}
                     </>
       </S.Container>
     </S.Wrapper>
