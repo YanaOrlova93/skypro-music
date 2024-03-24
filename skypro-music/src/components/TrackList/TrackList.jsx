@@ -4,6 +4,7 @@ import * as S from './TrackList.styles.js';
 import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
 import { Track } from '../Track/Track.jsx';
 import { useSelector } from 'react-redux';
+import { compareAsc, compareDesc } from 'date-fns';
 
 export const TrackList = ({ searchText, isLoading, setIsPlayerVisible, loadingTracksError, playlist, setLoadingTracksError, setIsLoading, selectedAuthors, selectedGenres, selectedSort, categoryId})  => {
 
